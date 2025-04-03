@@ -6,7 +6,6 @@ const MealSchema = new mongoose.Schema({
   proteines: { type: Number, required: true },
   glucides: { type: Number, required: true },
   lipides: { type: Number, required: true },
-  date: { type: Date, default: Date.now },
 });
 
 export default mongoose.model("Meal", MealSchema);

@@ -1,12 +1,12 @@
 const API_URL = "http://localhost:4000";
 
-export const getTotals = async (userId) => {
+export const getTotals = async () => {
   const response = await fetch(`${API_URL}/meals/totals`);
   return response.json();
 };
 
-export const getRecommendations = async (userId, goals) => {
-  const response = await fetch(`${API_URL}/meals/recommendations`, {
+export const getRecommendations = async ( goals) => {
+  const response = await fetch(`${API_URL}/meals/recommandations`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

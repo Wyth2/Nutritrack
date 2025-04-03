@@ -2,7 +2,7 @@ export const calculateProgress = (current, goal) => Math.min((current / goal) * 
 
 export const filterByNutrients = (meals, nutriments) =>
   meals.filter((meal) =>
-    Object.keys(nutrients).every((key) => meal[key] <= nutriments[key])
+    Object.keys(nutriments).every((key) => meal[key] <= nutriments[key])
   );
 
   export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);

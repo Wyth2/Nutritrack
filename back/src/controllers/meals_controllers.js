@@ -5,9 +5,9 @@ const createMeal = async (req, res) => {
     const newMeal = new Meal({
       name: "Pizza",
       calories: 300,
-      proteins: 12,
-      carbs: 30,
-      fats: 15,
+      proteines: 12,
+      glucides: 30,
+      lipides: 15,
     });
     await newMeal.save();
     res.status(201).json(newMeal);

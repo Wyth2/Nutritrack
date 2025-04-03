@@ -1,16 +1,16 @@
 import Meal from "../models/meals_model.js";
 
-export const calculateDailyTotals = async (userId) => {
-    const meals = await Meal.find({ userId });
+export const calculateDailyTotals = async () => {
+    const meals = await Meal.find();
     const totals = meals.reduce(
       (acc, meal) => {
-        acc.calories += meal.calories;
-        acc.proteins += meal.proteins;
-        acc.carbs += meal.carbs;
-        acc.fats += meal.fats;
+        acc.calories += meal.calories || 0;
+        acc.proteines += meal.proteines || 0;
+        acc.glucides += meal.glucides || 0;
+        acc.lipides += meal.lipides || 0;
         return acc;
       },
-      { calories: 0, proteins: 0, carbs: 0, fats: 0 }
+      { calories: 0, proteines: 0, glucides: 0, lipides: 0 }
     );
     return totals;
   };

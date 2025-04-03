@@ -1,13 +1,13 @@
 import Meal from "../models/meals_model.js";
 
-export const generateRecommendations = async (userId, goals) => {
-  const meals = await Meal.find({ userId });
+export const generateRecommendations = async ( goals) => {
+  const meals = await Meal.find();
   const recommendations = meals.filter((meal) => {
     return (
       meal.calories <= goals.calories &&
-      meal.proteins <= goals.proteins &&
-      meal.carbs <= goals.carbs &&
-      meal.fats <= goals.fats
+      meal.proteines <= goals.proteines &&
+      meal.glucides <= goals.glucides &&
+      meal.lipides <= goals.lipides
     );
   });
   return recommendations;

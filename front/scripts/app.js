@@ -6,18 +6,17 @@ import { getTotals, getRecommendations, addMeal } from "./services/api.js";
 import { calculateProgress, calculateTotals } from "./utils/functionnals.js";
 
 const init = async () => {
-  const userId = "123"; // Remplacez par l'ID utilisateur réel
-  const goals = { calories: 2000, proteins: 150, carbs: 250, fats: 70 }; // Exemple d'objectifs
+  const goals = { calories: 2000, proteines: 150, glucides: 250, lipides: 70 }; // Exemple d'objectifs
 
   // Récupérer les totaux journaliers
-  const totals = await getTotals(userId);
+  const totals = await getTotals();
   renderDashboard(totals, goals);
 
   // Afficher le formulaire pour ajouter un repas
   renderMealForm();
 
   // Afficher les recommandations
-  renderRecommendations(userId, goals);
+  renderRecommendations( goals);
 
   // Récupérer les repas et afficher les statistiques
   const meals = [
